@@ -6,7 +6,7 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "clean": "rm -rf dist",
-    "build": "npm run clean && babel public/scripts --out-dir dist"
+    "build": "webpack --mode production"
   },
   "keywords": [],
   "author": "",
@@ -19,6 +19,11 @@
   "devDependencies": {
     "@babel/cli": "^7.26.4",
     "@babel/preset-env": "^7.26.0",
+    "babel-loader": "^9.2.1",
+    "copy-webpack-plugin": "^12.0.2",
+    "html-webpack-plugin": "^5.6.3",
+    "install": "^0.13.0",
+    "npm": "^10.9.2",
     "webpack": "^5.97.1",
     "webpack-cli": "^5.1.4"
   }

@@ -18,6 +18,8 @@
   },
   "devDependencies": {
     "@babel/cli": "^7.26.4",
-    "@babel/preset-env": "^7.26.0"
+    "@babel/preset-env": "^7.26.0",
+    "webpack": "^5.97.1",
+    "webpack-cli": "^5.1.4"
   }
 }

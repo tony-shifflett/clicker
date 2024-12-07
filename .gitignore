@@ -1,0 +1,45 @@
+# Node.js
+node_modules/
+npm-debug.log
+yarn-error.log
+
+# Editor files
+.vscode/
+*.suo
+*.user
+*.sln
+*.vspscc
+.DS_Store
+.idea
+
+# Testing
+/coverage/
+
+# Environment variables
+.env 
+.env.*
+
+# Firebase specific
+firebase.json
+*.firebaserc
+
+# Build artifacts
+dist/
+build/
+
+# Temporary files
+*.log
+*.pid
+*.tmp
+
+# macOS
+.DS_Store
+
+# Windows
+Thumbs.db
+ehthumbs.db
+*~
+
+# Bootstrap and jQuery
+/node_modules/bootstrap/dist/ 
+/node_modules/jquery/dist/ 

@@ -1,30 +1,34 @@
+//imports
+import $ from "jquery";
+import "popper.js";
+import "bootstrap";
 import { TediousButton } from "./TediousButton.js";
-
 //an array to store buttons as they're created by the user
 let tediousButtonArray = [];
 let firstButtonClicks = 0;
 let secondButtonClicks = 0;
 let sumOfClicks =
-  firstButtonClicks + secondButtonClicks + tediousButtonArray.forEach((button) => button.timesClicked);
+  firstButtonClicks +
+  secondButtonClicks +
+  tediousButtonArray.forEach((button) => button.timesClicked);
 
 const buttonClickHandler = (event) => {
-    //special case - the first hard-coded button
+  //special case - the first hard-coded button
   if ($(event.target).attr("id") == "first-counter") {
     firstButtonClicks++;
     $("#button-count").text(`${firstButtonClicks}`);
   }
   //special case - the second hard-coded button
-  else if ($(event.target).attr("id") == 'second-counter'){
-
+  else if ($(event.target).attr("id") == "second-counter") {
   }
   //all other buttons are added by the add button, and have an internal counter
-  else{
+  else {
     $(event.target).incrementTimesClicked();
   }
 };
 
 $("#button-count").append(`${firstButtonClicks}`);
-$("#second-button-count")
+$("#second-button-count");
 
 const addButtonHandler = () => {
   //create an instance of TediousButton with an id equal to its index, then add it to the index

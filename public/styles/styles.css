@@ -1,5 +1,5 @@
 .btn-group {
+  max-width: 100%;
   flex-wrap: wrap;
   margin: 20px;
 }
-

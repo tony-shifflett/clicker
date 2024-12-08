@@ -43,3 +43,6 @@ ehthumbs.db
 # Bootstrap and jQuery
 /node_modules/bootstrap/dist/ 
 /node_modules/jquery/dist/ 
+
+#Dev Notes
+DEVNOTES.md

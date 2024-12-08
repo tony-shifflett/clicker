@@ -1,5 +1,5 @@
 //imports
-import 'bootstrap/dist/css/bootstrap.min.css';
+import "bootstrap/dist/css/bootstrap.min.css";
 import $ from "jquery";
 import "popper.js";
 import "bootstrap";
@@ -16,31 +16,35 @@ let sumOfClicks =
 
 const buttonClickHandler = (event) => {
   //special case - the first hard-coded button
-  if ($(event.target).attr("id") == "first-counter") {
+  const buttonID = $(event.target).attr("id");
+  if (buttonID == "first-counter") {
     firstButtonClicks++;
     $("#button-count").text(`${firstButtonClicks}`);
   }
   //special case - the second hard-coded button
-  else if ($(event.target).attr("id") == "second-counter") {
+  else if (buttonID == "second-counter") {
+    secondButtonClicks++;
+    $("#second-button-count").text(`${secondButtonClicks}`);
   }
   //all other buttons are added by the add button, and have an internal counter
   else {
-    $(event.target).incrementTimesClicked();
   }
 };
 
 $("#button-count").append(`${firstButtonClicks}`);
-$("#second-button-count");
+$("#second-button-count").append(`${secondButtonClicks}`);
 
 const addButtonHandler = () => {
   //create an instance of TediousButton with an id equal to its index, then add it to the index
-  const anotherFnButton = new TediousButton(tediousButtonArray.length);
+  const anotherFnButton = new TediousButton(
+    `button-${tediousButtonArray.length}`
+  );
   tediousButtonArray.push(anotherFnButton);
-  console.log(tediousButtonArray);
   const $button = $("<button>").text("Click Me!").addClass("btn btn-primary");
   $(".btn-group").append($button);
   $button.on("click", buttonClickHandler);
 };
 
 $("#first-counter").on("click", buttonClickHandler);
+$("#second-counter").on("click", buttonClickHandler);
 $("#add").on("click", addButtonHandler);

@@ -1,8 +1,10 @@
 //imports
+import 'bootstrap/dist/css/bootstrap.min.css';
 import $ from "jquery";
 import "popper.js";
 import "bootstrap";
 import { TediousButton } from "./TediousButton.js";
+
 //an array to store buttons as they're created by the user
 let tediousButtonArray = [];
 let firstButtonClicks = 0;

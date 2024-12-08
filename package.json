@@ -12,10 +12,11 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "bootstrap": "^5.3.3",
     "dotenv": "^16.4.7",
     "firebase": "^11.0.2",
-    "bootstrap": "^5.3.3",
-    "jquery": "^3.7.1"
+    "jquery": "^3.7.1",
+    "popper.js": "^1.16.1"
   },
   "devDependencies": {
     "@babel/cli": "^7.26.4",

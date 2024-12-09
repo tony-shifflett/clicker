@@ -35,26 +35,31 @@
         </div>
       </nav>
     </header>
-    <span>
-      Button Clicks:
-      <div id="button-count"></div>
-    </span>
-    <span>
-      Second Button Clicks:
-      <div id="second-button-count"></div>
-    </span>
+    <div class="mandatory-buttons">
+      <div id="first-button-div" class="card w-25">
+        <div class="card-body">
+          <span class="'card-title"> Button Clicks: </span>
+          <div id="button-count" class="card-text"></div>
+          <button class="btn btn-primary" type="button" id="first-counter">
+            Click Me!
+          </button>
+        </div>
+      </div>
+      <div id="second-button-div" class="card w-25">
+        <div class="card-body">
+          <span class="card-title"> Second Button Clicks: </span>
+          <div id="second-button-count" class="card-text"></div>
+          <button class="btn btn-primary" type="button" id="second-counter">
+            Click Me!
+          </button>
+        </div>
+      </div>
+    </div>
     <div
       class="btn-group"
       style="justify-content: space-around !important"
       role="group"
-    >
-      <button class="btn btn-primary" type="button" id="first-counter">
-        Click Me!
-      </button>
-      <button class="btn btn-primary" type="button" id="second-counter">
-        Click Me!
-      </button>
-    </div>
+    ></div>
     <button class="btn btn-primary" id="add" type="button">Add A Button</button>
   </body>
 </html>

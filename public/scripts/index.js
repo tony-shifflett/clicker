@@ -28,6 +28,10 @@ const buttonClickHandler = (event) => {
   }
   //all other buttons are added by the add button, and have an internal counter
   else {
+    tediousButtonArray[
+      parseInt(buttonID.split("-")[1])
+    ].incrementTimesClicked();
+    
   }
 };
 
@@ -40,8 +44,26 @@ const addButtonHandler = () => {
     `button-${tediousButtonArray.length}`
   );
   tediousButtonArray.push(anotherFnButton);
-  const $button = $("<button>").text("Click Me!").addClass("btn btn-primary");
-  $(".btn-group").append($button);
+  //build button container
+  const $buttonDiv = $("<div>").attr("id", "button-div").addClass("card w-25");
+  const $cardBody = $("<div>").addClass("card-body");
+  const $cardTitle = $("<span>")
+    .addClass("card-title")
+    .text(`Additional Button ${tediousButtonArray.length} Clicks: `);
+  const $buttonCount = $("<div>")
+    .attr("id", `${anotherFnButton.id}-count`)
+    .addClass("card text");
+  const $button = $("<button>")
+    .text("Click Me!")
+    .addClass("btn btn-primary")
+    .attr("id", anotherFnButton.id)
+    .on("click", buttonClickHandler);
+
+  //create the nodes
+  $cardBody.append($cardTitle, $buttonCount, $button);
+  $buttonDiv.append($cardBody);
+
+  $(".btn-group").append($buttonDiv);
   $button.on("click", buttonClickHandler);
 };
 

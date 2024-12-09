@@ -28,10 +28,9 @@ const buttonClickHandler = (event) => {
   }
   //all other buttons are added by the add button, and have an internal counter
   else {
-    tediousButtonArray[
-      parseInt(buttonID.split("-")[1])
-    ].incrementTimesClicked();
-    
+    const currentButton = tediousButtonArray[parseInt(buttonID.split("-")[1])];
+    currentButton.incrementTimesClicked();
+    $(`#${currentButton.id}-count`).text(`${currentButton.timesClicked}`);
   }
 };
 
@@ -52,7 +51,8 @@ const addButtonHandler = () => {
     .text(`Additional Button ${tediousButtonArray.length} Clicks: `);
   const $buttonCount = $("<div>")
     .attr("id", `${anotherFnButton.id}-count`)
-    .addClass("card text");
+    .addClass("card text")
+    .text(anotherFnButton.timesClicked);
   const $button = $("<button>")
     .text("Click Me!")
     .addClass("btn btn-primary")
